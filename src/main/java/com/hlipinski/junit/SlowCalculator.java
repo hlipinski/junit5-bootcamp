@@ -4,10 +4,8 @@ class SlowCalculator extends Calculator {
     @Override
     int divide(int a, int b) {
         try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+            Thread.sleep(100);
+        } catch (InterruptedException e) { }
         return super.divide(a, b);
     }
 }
