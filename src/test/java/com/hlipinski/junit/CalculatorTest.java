@@ -7,7 +7,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 class CalculatorTest {
@@ -123,11 +122,6 @@ class CalculatorTest {
 		assumingThat(
 				b != 0,
 				() -> assertEquals(1, calculator.divide(a, b), () -> a + " / " + b + " should equal " + a / b)
-		);
-
-		assumeTrue(
-				"DEV".equals(System.getenv("ENV")),
-				() -> "Aborting test: not on developer workstation"
 		);
 	}
 }
